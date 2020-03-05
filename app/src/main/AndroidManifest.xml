@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".SecurityQuestionsActivity"></activity>
+        <activity android:name=".ProvideBankAccountNumberActivity" />
+        <activity android:name=".SelectYourBankActivity" />
         <activity
             android:name=".views.MainActivity"
             android:label="@string/app_name"
