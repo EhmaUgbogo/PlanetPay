@@ -1,6 +1,7 @@
 package com.planetpay.api;
 
 import com.planetpay.BuildConfig;
+import com.planetpay.api.encryptor.EncryptionInterceptor;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,11 +19,13 @@ public class RetrofitClient {
         if (INSTANCE == null) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.level(HttpLoggingInterceptor.Level.BODY);
+
             OkHttpClient okHttpClient = new OkHttpClient.Builder()
                     .connectTimeout(2, TimeUnit.MINUTES)
                     .readTimeout(2, TimeUnit.MINUTES)
                     .writeTimeout(2, TimeUnit.MINUTES)
                     .addInterceptor(interceptor)
+                    .addNetworkInterceptor(new EncryptionInterceptor())
                     .build();
 
 
