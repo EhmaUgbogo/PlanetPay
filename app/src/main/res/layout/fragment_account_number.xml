@@ -80,7 +80,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/btn_curves"
+        android:background="@drawable/btn_curves_ii"
         android:text="Next "
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/spinner"
