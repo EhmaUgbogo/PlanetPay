@@ -7,15 +7,18 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 import com.pixplicity.easyprefs.library.Prefs;
+import com.planetpay.datastore.DataManager;
 
 
 public class Common extends Application {
+    private DataManager dataManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
         initPrefLib();
+        dataManager=new DataManager();
 
     }
 
@@ -36,5 +39,7 @@ public class Common extends Application {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-
+    public DataManager getDataManager() {
+        return dataManager;
+    }
 }

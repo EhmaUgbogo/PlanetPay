@@ -1,7 +1,5 @@
 package com.planetpay;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -10,20 +8,22 @@ import com.google.android.material.snackbar.Snackbar;
 import com.planetpay.datastore.DataManager;
 import com.planetpay.utils.Common;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseFragment extends Fragment {
+
     private DataManager dataManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        dataManager = ((Common)this.getApplicationContext()).getDataManager();
-
+        dataManager = ((Common) getActivity().getApplicationContext()).getDataManager();
     }
 
     protected void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
     }
 
     private void showSnackBar(View view, String msg) {
@@ -33,7 +33,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected boolean checkNetworkState() {
-        if (!Common.checkNetwork(this)) {
+        if (!Common.checkNetwork(getActivity())) {
             showToast("You do not have a network connection");
             return false;
         }
@@ -43,5 +43,4 @@ public class BaseActivity extends AppCompatActivity {
     public DataManager getDataManager() {
         return dataManager;
     }
-
 }
