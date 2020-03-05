@@ -1,8 +1,10 @@
-package com.planetpay;
+package com.planetpay.views.ui.provide_bank_account_number;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.planetpay.R;
 
 public class ProvideBankAccountNumberActivity extends AppCompatActivity {
 
