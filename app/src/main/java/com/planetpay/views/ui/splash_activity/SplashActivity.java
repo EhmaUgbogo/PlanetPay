@@ -1,8 +1,10 @@
-package com.planetpay;
+package com.planetpay.views.ui.splash_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.planetpay.R;
 
 public class SplashActivity extends AppCompatActivity {
 
