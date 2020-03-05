@@ -1,4 +1,4 @@
-package com.planetpay.api.response;
+package com.planetpay.api.response.bvn;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
