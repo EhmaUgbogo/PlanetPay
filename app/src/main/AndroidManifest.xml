@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".views.ui.funds_transfer.FundsTransferActivity"></activity>
+        <activity android:name=".SplashActivity"></activity>
+        <activity android:name=".views.ui.funds_transfer.FundsTransferActivity" />
         <activity android:name=".views.ui.login_register.RegisterActivity" />
         <activity android:name=".views.ui.login_register.LoginActivity" />
-        <activity android:name=".views.ui.security_questions.SecurityQuestionsActivity"></activity>
+        <activity android:name=".views.ui.security_questions.SecurityQuestionsActivity" />
         <activity android:name=".views.ui.provide_bank_account_number.ProvideBankAccountNumberActivity" />
         <activity android:name=".views.ui.select_your_bank.SelectYourBankActivity" />
         <activity
