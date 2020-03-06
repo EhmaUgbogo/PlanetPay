@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/gotham_book"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
@@ -311,12 +311,12 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="248dp"
+            android:layout_height="73dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/planetpay_launcher" />
+            app:srcCompat="@drawable/planetpay_blue" />
 
         <ProgressBar
             android:id="@+id/activity_register_progressBar"
