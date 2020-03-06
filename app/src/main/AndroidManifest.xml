@@ -14,7 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".views.bvn_verification.BvnVerificationActivity"></activity>
         <activity
-            android:name=".views.ui.splash_activity.SplashActivity"
+            android:name=".views.splash_activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,9 @@
         <activity android:name=".views.funds_transfer.FundsTransferActivity" />
         <activity android:name=".views.login_register.RegisterActivity" />
         <activity android:name=".views.login_register.LoginActivity" />
-        <activity android:name=".views.ui.security_questions.SecurityQuestionsActivity" />
-        <activity android:name=".views.ui.provide_bank_account_number.ProvideBankAccountNumberActivity" />
-        <activity android:name=".views.ui.select_your_bank.SelectYourBankActivity" />
+        <activity android:name=".views.security_questions.SecurityQuestionsActivity" />
+        <activity android:name=".views.provide_bank_account_number.ProvideBankAccountNumberActivity" />
+        <activity android:name=".views.select_your_bank.SelectYourBankActivity" />
         <activity
             android:name=".views.MainActivity"
             android:label="@string/app_name"

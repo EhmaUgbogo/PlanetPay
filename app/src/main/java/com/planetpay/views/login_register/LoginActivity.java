@@ -68,8 +68,8 @@ public class LoginActivity extends BaseActivity {
                     Log.d(TAG, "User created successfully" + task.isSuccessful());
                     if (task.isSuccessful()){
                         checkEmailVerification();
-
                     }else {
+                        showToast("Unable to Register Login "+task.getException().getMessage());
                         hideProgress();
                     }
 
@@ -88,7 +88,6 @@ public class LoginActivity extends BaseActivity {
             Intent i = new Intent(this, BvnVerificationActivity.class);
             startActivity(i);
         }else{
-
             hideProgress();
             showAlert();
         }
@@ -109,19 +108,15 @@ public class LoginActivity extends BaseActivity {
 
     private void sendVerificationEmail() {
         auth.getCurrentUser().sendEmailVerification()
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            hideProgress();
-                            dialog.dismiss();
-                            inflateAlert();
-                        }
-                        else{
-                            firebaseUser.delete();
-                            hideProgress();
-                            showToast("Please Try Again. ");
-                        }
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        hideProgress();
+                        dialog.dismiss();
+                        inflateAlert();
+                    }
+                    else{
+                        hideProgress();
+                        showToast("Please Try Again. ");
                     }
                 });
     }
