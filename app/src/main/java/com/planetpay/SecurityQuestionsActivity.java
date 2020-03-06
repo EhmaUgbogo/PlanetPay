@@ -1,10 +1,8 @@
-package com.planetpay.views.security_questions;
+package com.planetpay;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-import com.planetpay.R;
 
 public class SecurityQuestionsActivity extends AppCompatActivity {
 

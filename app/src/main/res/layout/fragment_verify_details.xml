@@ -87,9 +87,8 @@
         android:id="@+id/amount_textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textAmount">
@@ -108,7 +107,7 @@
         android:id="@+id/textAmount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/gotha_medium"
         android:text="Amount"
@@ -121,9 +120,8 @@
         android:id="@+id/desc_textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDesc">
@@ -141,7 +139,7 @@
         android:id="@+id/textDesc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/gotha_medium"
         android:text="Description"
@@ -150,51 +148,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/amount_textInputLayout" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/pin_textInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPin">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/activity_funds_transfer_pin_editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="numberPassword"
-            android:background="@drawable/edit_curves"
-            android:padding="15dp"
-            android:paddingStart="25dp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:id="@+id/textPin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/gotha_medium"
-        android:text="Pin"
-        android:textColor="@color/TextColorPrimary"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/desc_textInputLayout" />
-
     <Button
         android:id="@+id/activity_funds_transfer_confirm_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/btn_curves_ii"
         android:text="Confirm"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/pin_textInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/pin_textInputLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/desc_textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/desc_textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/desc_textInputLayout" />
 
     <ImageButton
         android:id="@+id/imageButton"
