@@ -4,17 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.planetpay.R;
-import com.planetpay.models.Banks;
-import com.planetpay.models.SelectedBanks;
+import com.planetpay.models.Bank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +21,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SelectBankAdapter extends RecyclerView.Adapter<SelectBankAdapter.ViewHolder> {
     private Context context;
-    private List<Banks> banks;
-    public List<SelectedBanks> selectedBanks = new ArrayList<>();
-    public SelectBankAdapter(Context context, List<Banks> banks){
+    private List<Bank> banks;
+    public List<Bank> selectedBanks = new ArrayList<>();
+
+
+
+    public SelectBankAdapter(Context context, List<Bank> banks){
         this.context = context;
         this.banks = banks;
     }
@@ -41,7 +41,7 @@ public class SelectBankAdapter extends RecyclerView.Adapter<SelectBankAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull SelectBankAdapter.ViewHolder holder, int position) {
-        Banks item = banks.get(position);
+        Bank item = banks.get(position);
         holder.bank_logo.setImageResource(item.getImageUrl());
         holder.bank_name.setText(item.getName());
         holder.itemView.setOnClickListener(v -> {
@@ -60,7 +60,7 @@ public class SelectBankAdapter extends RecyclerView.Adapter<SelectBankAdapter.Vi
         return banks.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private CircleImageView bank_logo;
         private TextView bank_name;
         private CheckBox checkBox;
@@ -69,6 +69,15 @@ public class SelectBankAdapter extends RecyclerView.Adapter<SelectBankAdapter.Vi
             bank_logo = view.findViewById(R.id.item_bank_select_bank_image_view);
             bank_name = view.findViewById(R.id.item_bank_select_bank_name_text_view);
             checkBox = view.findViewById(R.id.item_bank_select_checkbox);
+
+            view.setOnClickListener(v-> {
+                Bank bank = banks.get(getAdapterPosition());
+                if(selectedBanks.contains(bank)){
+                    selectedBanks.remove(bank);
+                } else {
+                    selectedBanks.add(banks.get(getAdapterPosition()));
+                }
+            });
         }
     }
 

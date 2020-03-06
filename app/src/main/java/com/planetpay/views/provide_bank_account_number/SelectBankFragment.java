@@ -16,8 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.planetpay.R;
-import com.planetpay.models.Banks;
-import com.planetpay.views.provide_bank_account_number.adapter.InputAccountNumberAdapter;
+import com.planetpay.models.Bank;
+import com.planetpay.models.SelectedBanks;
 import com.planetpay.views.provide_bank_account_number.adapter.SelectBankAdapter;
 
 import java.util.ArrayList;
@@ -32,7 +32,8 @@ public class SelectBankFragment extends Fragment {
     private SelectBankAdapter selectBankAdapter;
     private Button nextBtn;
 
-    private List<Banks> banks = new ArrayList<>();
+
+    private List<Bank> banks = new ArrayList<>();
 
     public SelectBankFragment() {
         // Required empty public constructor
@@ -67,10 +68,10 @@ public class SelectBankFragment extends Fragment {
     }
 
     private void dummyData() {
-        banks.add(new Banks("Sterling Bank", R.drawable.sterling ));
-        banks.add(new Banks("GT Bank", R.drawable.gt_bank ));
-        banks.add(new Banks("First Bank", R.drawable.first_bank ));
-        banks.add(new Banks("UBA", R.drawable.uba ));
-        banks.add(new Banks("Access Bank", R.drawable.access ));
+        banks.add(new Bank("Sterling Bank", R.drawable.sterling ));
+        banks.add(new Bank("GT Bank", R.drawable.gt_bank ));
+        banks.add(new Bank("First Bank", R.drawable.first_bank ));
+        banks.add(new Bank("UBA", R.drawable.uba ));
+        banks.add(new Bank("Access Bank", R.drawable.access ));
     }
 }

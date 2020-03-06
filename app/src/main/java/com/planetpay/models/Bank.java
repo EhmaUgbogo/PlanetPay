@@ -1,10 +1,10 @@
 package com.planetpay.models;
 
-public class Banks {
+public class Bank {
     private  String name;
     private Integer imageUrl;
 
-    public Banks(String name, Integer imageUrl) {
+    public Bank(String name, Integer imageUrl) {
         this.name = name;
         this.imageUrl = imageUrl;
     }
