@@ -254,6 +254,7 @@ public class RegisterActivity extends BaseActivity {
         });
         myDialog.setView(customView);
         Dialog dialog = myDialog.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
 
     }

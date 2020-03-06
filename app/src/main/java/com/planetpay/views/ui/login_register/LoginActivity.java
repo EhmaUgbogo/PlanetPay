@@ -1,7 +1,12 @@
 package com.planetpay.views.ui.login_register;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
+import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,8 +17,11 @@ import android.widget.ProgressBar;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseUser;
 import com.planetpay.BaseActivity;
 import com.planetpay.R;
+import com.planetpay.models.User;
+import com.planetpay.views.ui.bvn_verification.BvnVerificationActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,7 +32,7 @@ public class LoginActivity extends BaseActivity {
     private EditText emailEditText, passwordEditText;
     private Button loginButton, signUpButton;
     private ProgressBar progressBar;
-
+    private Dialog dialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,18 +48,27 @@ public class LoginActivity extends BaseActivity {
         loginButton = findViewById(R.id.activity_sign_in_button_sign_in);
         signUpButton = findViewById(R.id.activity_sign_in_button_sign_up);
         progressBar = findViewById(R.id.activity_sign_in_progressBar);
-
+        listeners();
     }
+
+    private void listeners() {
+        signUpButton.setOnClickListener(v -> startActivity(new Intent(this,RegisterActivity.class)));
+        loginButton.setOnClickListener(v -> {
+            if(checkNetworkState()) {
+                loginUser(emailEditText.getText().toString(), passwordEditText.getText().toString());
+            }
+        });
+    }
+
     private void loginUser(String email, String password){
         showProgress();
         if (validateInputs(email, password)){
             auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>(){
-
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     Log.d(TAG, "User created successfully" + task.isSuccessful());
                     if (task.isSuccessful()){
-
+                        checkEmailVerification();
 
                     }else {
                         hideProgress();
@@ -63,6 +80,64 @@ public class LoginActivity extends BaseActivity {
             showToast("Check required inputs");
             hideProgress();
         }
+    }
+
+    private void checkEmailVerification() {
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if(currentUser.isEmailVerified()){
+            hideProgress();
+            Intent i = new Intent(this, BvnVerificationActivity.class);
+            startActivity(i);
+        }else{
+
+            hideProgress();
+            showAlert();
+        }
+    }
+
+    private void showAlert() {
+        final AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
+        View customView = getLayoutInflater().inflate(R.layout.dialog_not_verified_dialog, null);
+        Button resendBtn = customView.findViewById(R.id.dialog_not_verified_resend_btn);
+        resendBtn.setOnClickListener(v -> {
+            sendVerificationEmail();
+        });
+        myDialog.setView(customView);
+        dialog = myDialog.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+    }
+
+    private void sendVerificationEmail() {
+        auth.getCurrentUser().sendEmailVerification()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            hideProgress();
+                            dialog.dismiss();
+                            inflateAlert();
+                        }
+                        else{
+                            firebaseUser.delete();
+                            hideProgress();
+                            showToast("Please Try Again. ");
+                        }
+                    }
+                });
+    }
+
+    private void inflateAlert() {
+        final AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
+        View customView = getLayoutInflater().inflate(R.layout.dialog_successful_reg_dialog, null);
+        Button loginBtn = customView.findViewById(R.id.dialog_successful_login_btn);
+        myDialog.setView(customView);
+        dialog = myDialog.create();
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        loginBtn.setOnClickListener(v -> {
+            dialog.dismiss();
+        });
+        dialog.show();
     }
 
     private boolean validateInputs(String email, String password) {

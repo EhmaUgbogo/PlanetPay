@@ -36,19 +36,16 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void navigateTo() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (firstTime) {
-                    Prefs.putBoolean(APP_OPEN_FIRST_TIME, false);
-                    Intent login = new Intent(SplashActivity.this.getApplicationContext(), LoginActivity.class);
-                    SplashActivity.this.startActivity(login);
-                    SplashActivity.this.finish();
-                } else {
-                    //Should goto MainActivity
-                    SplashActivity.this.startActivity(new Intent(SplashActivity.this.getApplicationContext(), LoginActivity.class));
-                    SplashActivity.this.finish();
-                }
+        new Handler().postDelayed(() -> {
+            if (firstTime) {
+                Prefs.putBoolean(APP_OPEN_FIRST_TIME, false);
+                Intent login = new Intent(SplashActivity.this.getApplicationContext(), LoginActivity.class);
+                SplashActivity.this.startActivity(login);
+                SplashActivity.this.finish();
+            } else {
+                //Should goto MainActivity
+                SplashActivity.this.startActivity(new Intent(SplashActivity.this.getApplicationContext(), LoginActivity.class));
+                SplashActivity.this.finish();
             }
         },3000);
     }
