@@ -1,4 +1,4 @@
-package com.planetpay.views.ui.bvn_verification;
+package com.planetpay.views.bvn_verification;
 
 import androidx.appcompat.app.AppCompatActivity;
 

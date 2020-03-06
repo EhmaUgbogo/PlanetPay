@@ -1,6 +1,4 @@
-package com.planetpay.views.ui.funds_transfer;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.planetpay.views.funds_transfer;
 
 import android.os.Bundle;
 

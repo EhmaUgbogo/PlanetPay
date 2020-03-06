@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".views.ui.bvn_verification.BvnVerificationActivity"></activity>
+        <activity android:name=".views.bvn_verification.BvnVerificationActivity"></activity>
         <activity
             android:name=".views.ui.splash_activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.ui.funds_transfer.FundsTransferActivity" />
-        <activity android:name=".views.ui.login_register.RegisterActivity" />
-        <activity android:name=".views.ui.login_register.LoginActivity" />
+        <activity android:name=".views.funds_transfer.FundsTransferActivity" />
+        <activity android:name=".views.login_register.RegisterActivity" />
+        <activity android:name=".views.login_register.LoginActivity" />
         <activity android:name=".views.ui.security_questions.SecurityQuestionsActivity" />
         <activity android:name=".views.ui.provide_bank_account_number.ProvideBankAccountNumberActivity" />
         <activity android:name=".views.ui.select_your_bank.SelectYourBankActivity" />

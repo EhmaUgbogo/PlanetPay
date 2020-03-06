@@ -1,6 +1,5 @@
 package com.planetpay.views.ui.splash_activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
@@ -11,9 +10,7 @@ import android.os.Handler;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.planetpay.BaseActivity;
 import com.planetpay.R;
-import com.planetpay.views.MainActivity;
-import com.planetpay.views.ui.login_register.LoginActivity;
-import com.planetpay.views.ui.login_register.RegisterActivity;
+import com.planetpay.views.login_register.LoginActivity;
 
 public class SplashActivity extends BaseActivity {
 

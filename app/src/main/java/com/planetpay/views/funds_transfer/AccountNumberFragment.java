@@ -1,6 +1,5 @@
-package com.planetpay.views.ui.funds_transfer;
+package com.planetpay.views.funds_transfer;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;

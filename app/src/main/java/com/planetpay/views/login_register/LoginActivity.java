@@ -1,4 +1,4 @@
-package com.planetpay.views.ui.login_register;
+package com.planetpay.views.login_register;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -20,8 +20,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseUser;
 import com.planetpay.BaseActivity;
 import com.planetpay.R;
-import com.planetpay.models.User;
-import com.planetpay.views.ui.bvn_verification.BvnVerificationActivity;
+import com.planetpay.views.bvn_verification.BvnVerificationActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
