@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".views.bvn_verification.BvnVerificationActivity"></activity>
+        <activity android:name=".SecurityQuestionsActivity"></activity>
+        <activity android:name=".views.bvn_verification.BvnVerificationActivity" />
         <activity
             android:name=".views.splash_activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
