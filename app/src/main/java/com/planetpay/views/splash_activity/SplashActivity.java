@@ -112,7 +112,7 @@ public class SplashActivity extends BaseActivity {
                     gotoLogin();
                 }
             }
-        }, 3000);
+        }, 5000);
     }
 
     private void gotoLogin() {
