@@ -21,6 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.planetpay.BaseActivity;
 import com.planetpay.R;
 import com.planetpay.views.bvn_verification.BvnVerificationActivity;
+import com.planetpay.views.provide_bank_account_number.ProvideBankAccountNumberActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -85,7 +86,7 @@ public class LoginActivity extends BaseActivity {
         FirebaseUser currentUser = auth.getCurrentUser();
         if(currentUser.isEmailVerified()){
             hideProgress();
-            Intent i = new Intent(this, BvnVerificationActivity.class);
+            Intent i = new Intent(this, ProvideBankAccountNumberActivity.class);
             startActivity(i);
         }else{
             hideProgress();
@@ -116,7 +117,7 @@ public class LoginActivity extends BaseActivity {
                     }
                     else{
                         hideProgress();
-                        showToast("Please Try Again. ");
+                        showToast("Unable to Register User "+task.getException().getMessage());
                     }
                 });
     }

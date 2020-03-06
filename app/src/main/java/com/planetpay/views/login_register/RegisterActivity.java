@@ -99,7 +99,7 @@ public class RegisterActivity extends BaseActivity {
                 if (task.isSuccessful()) {
                     sendVerificationEmail();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Unable to Register User "+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    showToast("Unable to Register User "+task.getException().getMessage());
                     hideProgress();
                 }
 
@@ -123,7 +123,7 @@ public class RegisterActivity extends BaseActivity {
                         else{
                             firebaseUser.delete();
                             hideProgress();
-                            showToast("Please Try Again. ");
+                            showToast("Unable to Register User "+task.getException().getMessage()+" Please try again");
                         }
                     }
                 });
