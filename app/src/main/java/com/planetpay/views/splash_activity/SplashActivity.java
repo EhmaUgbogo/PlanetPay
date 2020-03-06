@@ -49,7 +49,7 @@ public class SplashActivity extends BaseActivity {
         progressBar.setIndeterminateDrawable(chasingDots);
 
         getBvnResetResponseData();
-
+        navigateTo();
     }
 
 

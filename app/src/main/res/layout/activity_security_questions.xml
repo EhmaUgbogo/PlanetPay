@@ -34,7 +34,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Security Questions"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/TextColorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
                 android:layout_marginEnd="16dp"
                 android:text="Please read the following carefully before proceeding."
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/TextColorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +65,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:text="The following security questions and answers will be provided by you, it is a method of ensuring that transactions on PlanetPay are authorized by only the verified user of the account. Kindly ensure you can recall these details as they will be required for authorization of transactions and for changing your details if need be."
-                android:textColor="@color/black"
+                android:textAlignment="viewStart"
+                android:textColor="@color/TextColorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/sequrity_questions_header" />
@@ -76,62 +77,54 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Question 1"
-                android:textColor="@color/black"
+                android:textColor="@color/TextColorPrimary"
                 app:layout_constraintBaseline_toBaselineOf="@+id/question_1_edit_text"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/question_1_edit_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/edittext_blue"
-                android:paddingStart="5dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:background="@drawable/edit_curves"
+                android:padding="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/question_1_txt"
                 app:layout_constraintTop_toBottomOf="@+id/security_questions_read_me" />
 
-            <TextView
+            <EditText
                 android:id="@+id/answer_1_edit_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/edittext_blue"
-                android:paddingStart="5dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:background="@drawable/edit_curves"
+                android:padding="15dp"
                 app:layout_constraintEnd_toEndOf="@+id/question_1_edit_text"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/question_1_edit_text"
                 app:layout_constraintTop_toBottomOf="@+id/question_1_edit_text" />
 
-            <TextView
+            <EditText
                 android:id="@+id/question_2_edit_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/edittext_blue"
-                android:paddingStart="5dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:background="@drawable/edit_curves"
+                android:padding="15dp"
                 app:layout_constraintEnd_toEndOf="@+id/question_1_edit_text"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/question_1_edit_text"
                 app:layout_constraintTop_toBottomOf="@+id/answer_1_edit_text" />
 
-            <TextView
+            <EditText
                 android:id="@+id/answer_2_edit_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/edittext_blue"
-                android:paddingStart="5dp"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:background="@drawable/edit_curves"
+                android:padding="15dp"
                 app:layout_constraintEnd_toEndOf="@+id/question_1_edit_text"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/question_1_edit_text"
@@ -143,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Answer 1"
-                android:textColor="@color/black"
+                android:textColor="@color/TextColorPrimary"
                 app:layout_constraintBaseline_toBaselineOf="@+id/answer_1_edit_text"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -153,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Question 2"
-                android:textColor="@color/black"
+                android:textColor="@color/TextColorPrimary"
                 app:layout_constraintBaseline_toBaselineOf="@+id/question_2_edit_text"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -163,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="Answer 2"
-                android:textColor="@color/black"
+                android:textColor="@color/TextColorPrimary"
                 app:layout_constraintBaseline_toBaselineOf="@+id/answer_2_edit_text"
                 app:layout_constraintStart_toStartOf="parent" />
 
