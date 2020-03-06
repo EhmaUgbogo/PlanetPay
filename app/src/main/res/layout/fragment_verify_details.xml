@@ -13,7 +13,7 @@
         android:layout_marginStart="32dp"
         android:fontFamily="@font/gotham_bold"
         android:text="Verify details"
-        android:textColor="@color/black"
+        android:textColor="@color/TextColorPrimary"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
@@ -112,7 +112,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/gotha_medium"
         android:text="Amount"
-        android:textColor="@color/black"
+        android:textColor="@color/TextColorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView" />
@@ -145,7 +145,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/gotha_medium"
         android:text="Description"
-        android:textColor="@color/black"
+        android:textColor="@color/TextColorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/amount_textInputLayout" />
@@ -179,7 +179,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/gotha_medium"
         android:text="Pin"
-        android:textColor="@color/black"
+        android:textColor="@color/TextColorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/desc_textInputLayout" />

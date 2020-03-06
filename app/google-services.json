@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "317468898635",
+    "firebase_url": "https://planetpay-c3809.firebaseio.com",
+    "project_id": "planetpay-c3809",
+    "storage_bucket": "planetpay-c3809.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317468898635:android:04550db451db2ce0df24ce",
+        "android_client_info": {
+          "package_name": "com.planetpay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317468898635-vp0vfiukbekphekch2jnbfdkvp394j1d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.planetpay",
+            "certificate_hash": "23cd63235737c9f963e1e48e3615f82003320fbb"
+          }
+        },
+        {
+          "client_id": "317468898635-ue9m1k2u02jf256a7mhsmte574hg5sc2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV6dxcxb2UOIoUH8nxOZChHzk73C7q-x4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317468898635-ue9m1k2u02jf256a7mhsmte574hg5sc2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

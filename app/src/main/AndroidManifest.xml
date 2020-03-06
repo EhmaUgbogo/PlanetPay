@@ -6,7 +6,7 @@
     <application
         android:name=".utils.Common"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/planetpay_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -14,8 +14,15 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".SplashActivity"></activity>
         <activity android:name=".views.ui.funds_transfer.FundsTransferActivity" />
-        <activity android:name=".views.ui.login_register.RegisterActivity" />
-        <activity android:name=".views.ui.login_register.LoginActivity" />
+        <activity android:name=".views.ui.login_register.RegisterActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".views.ui.login_register.LoginActivity" >
+        </activity>
         <activity android:name=".views.ui.security_questions.SecurityQuestionsActivity" />
         <activity android:name=".views.ui.provide_bank_account_number.ProvideBankAccountNumberActivity" />
         <activity android:name=".views.ui.select_your_bank.SelectYourBankActivity" />
@@ -23,11 +30,6 @@
             android:name=".views.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".BaseActivity" />
     </application>
