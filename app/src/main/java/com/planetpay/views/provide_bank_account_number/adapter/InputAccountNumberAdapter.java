@@ -43,7 +43,7 @@ public class InputAccountNumberAdapter extends RecyclerView.Adapter<InputAccount
 
     @Override
     public int getItemCount() {
-        return 6;
+        return banks.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
