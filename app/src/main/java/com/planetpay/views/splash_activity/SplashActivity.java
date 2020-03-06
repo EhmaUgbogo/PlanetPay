@@ -40,7 +40,7 @@ public class SplashActivity extends BaseActivity {
         firstTime = Prefs.getBoolean(APP_OPEN_FIRST_TIME, true);
 
         getBvnResetResponseData();
-
+        navigateTo();
     }
 
 
