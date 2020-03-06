@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".views.funds_transfer.FundsTransferActivity">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView5"
@@ -46,7 +45,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/gotham_bold"
-                android:text="Account Name"
+                android:text="Jane Doe"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/gotha_medium"
-                android:text="Bank Name"
+                android:text="Sterling bank"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/activity_funds_transfer_acct_name_textView"
@@ -73,7 +72,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/gotha_medium"
-                android:text="0000000000"
+                android:text="12345678901"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/activity_funds_transfer_bank_name_textView"
@@ -99,6 +98,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_curves"
             android:drawableStart="@drawable/ic_nigeria_naira"
+            android:drawablePadding="15dp"
+            android:inputType="number"
             android:padding="15dp"
             android:paddingStart="25dp" />
     </com.google.android.material.textfield.TextInputLayout>

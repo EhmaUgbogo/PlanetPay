@@ -22,6 +22,7 @@ import com.planetpay.BaseActivity;
 import com.planetpay.R;
 import com.planetpay.views.bvn_verification.BvnVerificationActivity;
 import com.planetpay.views.provide_bank_account_number.ProvideBankAccountNumberActivity;
+import com.planetpay.views.security_questions.CreateSecurityQuestionsActivity;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -86,7 +87,7 @@ public class LoginActivity extends BaseActivity {
         FirebaseUser currentUser = auth.getCurrentUser();
         if(currentUser.isEmailVerified()){
             hideProgress();
-            Intent i = new Intent(this, ProvideBankAccountNumberActivity.class);
+            Intent i = new Intent(this, CreateSecurityQuestionsActivity.class);
             startActivity(i);
         }else{
             hideProgress();

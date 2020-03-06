@@ -17,8 +17,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.planetpay.R;
+import com.planetpay.models.Bank;
 import com.planetpay.views.MainActivity;
 import com.planetpay.views.provide_bank_account_number.adapter.InputAccountNumberAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +31,7 @@ public class InputAccountNumberFragment extends Fragment {
     private RecyclerView recyclerView;
     private InputAccountNumberAdapter inputAccountNumberAdapter;
     private Button confirm_btn;
-
+    private List<Bank> banks = new ArrayList<>();
 
     public InputAccountNumberFragment() {
         // Required empty public constructor
@@ -46,7 +50,8 @@ public class InputAccountNumberFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.fragment_input_acct_num_rv);
-        inputAccountNumberAdapter = new InputAccountNumberAdapter();
+        dummyData();
+        inputAccountNumberAdapter = new InputAccountNumberAdapter(getContext(),banks);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(inputAccountNumberAdapter);
 
@@ -58,6 +63,15 @@ public class InputAccountNumberFragment extends Fragment {
         });
 
 
+
+    }
+
+    private void dummyData() {
+        banks.add(new Bank("Sterling Bank", R.drawable.sterling ));
+        banks.add(new Bank("GT Bank", R.drawable.gt_bank ));
+        banks.add(new Bank("First Bank", R.drawable.first_bank ));
+        banks.add(new Bank("UBA", R.drawable.uba ));
+        banks.add(new Bank("Access Bank", R.drawable.access ));
     }
 
 }

@@ -7,4 +7,15 @@
     tools:context=".views.funds_transfer.FundsTransferActivity">
 
 
+    <fragment
+        android:id="@+id/funds_transfer_navHostFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/transfer_nav_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>

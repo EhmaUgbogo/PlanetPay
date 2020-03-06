@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/transfer_nav_graph"
+    app:startDestination="@id/accountNumberFragment">
+
+    <fragment
+        android:id="@+id/accountNumberFragment"
+        android:name="com.planetpay.views.funds_transfer.AccountNumberFragment"
+        android:label="fragment_account_number"
+        tools:layout="@layout/fragment_account_number" >
+        <action
+            android:id="@+id/action_accountNumberFragment_to_verifyDetailsFragment"
+            app:destination="@id/verifyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transferSuccessfulFragment"
+        android:name="com.planetpay.views.funds_transfer.TransferSuccessfulFragment"
+        android:label="fragment_transfer_successful"
+        tools:layout="@layout/fragment_transfer_successful" />
+    <fragment
+        android:id="@+id/verifyDetailsFragment"
+        android:name="com.planetpay.views.funds_transfer.VerifyDetailsFragment"
+        android:label="VerifyDetailsFragment" >
+        <action
+            android:id="@+id/action_verifyDetailsFragment_to_securityQuestionsActivity"
+            app:destination="@id/securityQuestionsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/securityQuestionsActivity"
+        android:name="com.planetpay.SecurityQuestionsActivity"
+        android:label="activity_security_questions"
+        tools:layout="@layout/activity_security_questions" >
+        <action
+            android:id="@+id/action_securityQuestionsActivity_to_transferSuccessfulFragment"
+            app:destination="@id/transferSuccessfulFragment" />
+    </fragment>
+</navigation>
