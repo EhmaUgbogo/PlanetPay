@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ui.funds_transfer.FundsTransferActivity">
+    tools:context=".views.funds_transfer.FundsTransferActivity">
 
     <TextView
         android:id="@+id/textView5"

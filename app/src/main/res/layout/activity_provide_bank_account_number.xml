@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ui.provide_bank_account_number.ProvideBankAccountNumberActivity">
+    tools:context=".views.provide_bank_account_number.ProvideBankAccountNumberActivity">
 
     <TextView
         android:id="@+id/provide_bank_account_numbers_txt"

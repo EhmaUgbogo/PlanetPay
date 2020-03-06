@@ -1,4 +1,4 @@
-package com.planetpay.views.ui.security_questions;
+package com.planetpay.views.security_questions;
 
 import androidx.appcompat.app.AppCompatActivity;
 

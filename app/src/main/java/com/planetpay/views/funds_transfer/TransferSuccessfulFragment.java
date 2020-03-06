@@ -1,4 +1,4 @@
-package com.planetpay.views.ui.funds_transfer;
+package com.planetpay.views.funds_transfer;
 
 import android.os.Bundle;
 
@@ -13,9 +13,9 @@ import com.planetpay.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class VerifyDetailsFragment extends Fragment {
+public class TransferSuccessfulFragment extends Fragment {
 
-    public VerifyDetailsFragment() {
+    public TransferSuccessfulFragment() {
         // Required empty public constructor
     }
 
@@ -24,6 +24,6 @@ public class VerifyDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_verify_details, container, false);
+        return inflater.inflate(R.layout.fragment_transfer_successful, container, false);
     }
 }

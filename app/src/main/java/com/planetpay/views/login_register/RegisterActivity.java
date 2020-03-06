@@ -1,4 +1,4 @@
-package com.planetpay.views.ui.login_register;
+package com.planetpay.views.login_register;
 
 import androidx.appcompat.app.AppCompatActivity;
 

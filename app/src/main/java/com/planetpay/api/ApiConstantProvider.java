@@ -41,7 +41,7 @@ public class ApiConstantProvider {
     }
 
     public static String base64(String input) {
-        String base64String = Base64.encodeToString(input.getBytes(), Base64.DEFAULT);
+        String base64String = Base64.encodeToString(input.getBytes(), Base64.NO_WRAP);
         Log.d(TAG, "base64: input: "+input+" base64: "+base64String);
         return base64String;
     }
