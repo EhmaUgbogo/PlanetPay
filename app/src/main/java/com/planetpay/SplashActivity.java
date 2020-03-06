@@ -5,12 +5,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import com.planetpay.api.ApiConstantProvider;
 import com.planetpay.api.response.bvn.ResetResponse;
+import com.planetpay.views.MainActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -60,9 +62,8 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void proceed() {
-
+        startActivity(new Intent(this, MainActivity.class));
     }
-
 
     private void hideProgressbar() {
         //progressBar.setVisibility(View.GONE);
