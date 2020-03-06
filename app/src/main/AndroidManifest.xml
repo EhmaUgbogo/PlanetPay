@@ -25,7 +25,7 @@
         <activity android:name=".views.funds_transfer.FundsTransferActivity" />
         <activity android:name=".views.login_register.RegisterActivity" />
         <activity android:name=".views.login_register.LoginActivity" />
-        <activity android:name=".views.security_questions.SecurityQuestionsActivity" />
+        <activity android:name=".views.security_questions.CreateSecurityQuestionsActivity" />
         <activity android:name=".views.provide_bank_account_number.ProvideBankAccountNumberActivity" />
         <activity android:name=".views.select_your_bank.SelectYourBankActivity" />
         <activity
