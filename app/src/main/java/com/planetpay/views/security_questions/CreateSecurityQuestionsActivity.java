@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.planetpay.R;
 
-public class SecurityQuestionsActivity extends AppCompatActivity {
+public class CreateSecurityQuestionsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_security_questions);
+        setContentView(R.layout.activity_create_security_questions);
     }
 }
