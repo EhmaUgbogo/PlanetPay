@@ -1,16 +1,15 @@
 package com.planetpay.views.splash_activity;
 
-import androidx.core.content.ContextCompat;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.ChasingDots;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.planetpay.BaseActivity;
 import com.planetpay.R;
@@ -18,6 +17,11 @@ import com.planetpay.api.response.bvn.ResetResponse;
 import com.planetpay.views.login_register.LoginActivity;
 
 import org.jetbrains.annotations.NotNull;
+
+import androidx.core.content.ContextCompat;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static com.planetpay.api.ApiConstantProvider.SANDBOX_KEY;
 import static com.planetpay.api.ApiConstantProvider.orgCodeInBASE64;
@@ -27,6 +31,7 @@ public class SplashActivity extends BaseActivity {
     private static final String TAG = "SplashActivity";
     private final String APP_OPEN_FIRST_TIME = "com.planetpay_APP_OPEN_FIRST_TIME";
     private boolean firstTime;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,21 +44,27 @@ public class SplashActivity extends BaseActivity {
 
         firstTime = Prefs.getBoolean(APP_OPEN_FIRST_TIME, true);
 
+        progressBar = findViewById(R.id.splash_progress);
+        Sprite chasingDots = new ChasingDots();
+        progressBar.setIndeterminateDrawable(chasingDots);
+
         getBvnResetResponseData();
 
     }
 
 
     private void getBvnResetResponseData() {
-        Call<ResetResponse> resetResponseCall = getDataManager().getPlanetPayApi().bvnValidationReset(orgCodeInBASE64,SANDBOX_KEY);
+        showProgressbar();
+        Call<ResetResponse> resetResponseCall = getDataManager().getPlanetPayApi().bvnValidationReset(orgCodeInBASE64, SANDBOX_KEY);
         resetResponseCall.enqueue(new Callback<ResetResponse>() {
             @Override
             public void onResponse(@NotNull Call<ResetResponse> call, @NotNull Response<ResetResponse> response) {
                 if (response.isSuccessful()) {
                     ResetResponse resetResponse = response.body();
-                    if(resetResponse==null) {
+                    if (resetResponse == null) {
                         Log.d(TAG, "onResponse: successful resetResponse is null");
-                        getBvnResetResponseData(); return;
+                        getBvnResetResponseData();
+                        return;
                     }
                     getDataManager().setBvnResetResponse(resetResponse);
                     proceed();
@@ -62,7 +73,7 @@ public class SplashActivity extends BaseActivity {
                     Log.d(TAG, "Code: " + response.code() + "message; " + response.message());
                     getBvnResetResponseData();
                 }
-                hideProgressbar();
+
             }
 
             @Override
@@ -79,14 +90,12 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void hideProgressbar() {
-        //progressBar.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
     }
 
     private void showProgressbar() {
-        //progressBar.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
     }
-
-
 
 
     private void navigateTo() {
@@ -103,11 +112,12 @@ public class SplashActivity extends BaseActivity {
                     gotoLogin();
                 }
             }
-        },3000);
+        }, 3000);
     }
 
     private void gotoLogin() {
         startActivity(new Intent(SplashActivity.this.getApplicationContext(), LoginActivity.class));
         SplashActivity.this.finish();
     }
+
 }
