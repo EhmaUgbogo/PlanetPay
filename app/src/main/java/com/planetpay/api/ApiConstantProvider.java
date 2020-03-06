@@ -1,11 +1,13 @@
 package com.planetpay.api;
 
 import android.util.Base64;
+import android.util.Log;
 
 import java.security.MessageDigest;
 
 
 public class ApiConstantProvider {
+    private static final String TAG = "ApiConstantProvider";
     public static final String BASE_URL = "https://sandboxapi.fsi.ng/";
     public static final String SANDBOX_KEY = "8adec5df02eb9c59f64a8113e5c4f644";
 
@@ -38,8 +40,10 @@ public class ApiConstantProvider {
         return null;
     }
 
-    private static String base64(String input) {
-        return Base64.encodeToString(input.getBytes(), Base64.DEFAULT);
+    public static String base64(String input) {
+        String base64String = Base64.encodeToString(input.getBytes(), Base64.NO_WRAP);
+        Log.d(TAG, "base64: input: "+input+" base64: "+base64String);
+        return base64String;
     }
 
 }

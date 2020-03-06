@@ -49,4 +49,13 @@ public class ResetResponse {
         this.orgCode = orgCode;
     }
 
+    @Override
+    public String toString() {
+        return "ResetResponse{" +
+                "ivkey='" + ivkey + '\'' +
+                ", aesKey='" + aesKey + '\'' +
+                ", password='" + password + '\'' +
+                ", orgCode='" + orgCode + '\'' +
+                '}';
+    }
 }
